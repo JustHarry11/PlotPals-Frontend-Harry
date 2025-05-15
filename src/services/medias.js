@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getToken } from '../utils/auth'
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
@@ -22,7 +23,11 @@ export const singleMedia = async (mediaId) => {
 
 export const createMedia = async (formData) => {
     try {
-        return axios.post(`${BASE_URL}/medias`, formData)
+        return axios.post(`${BASE_URL}/medias`, formData, {
+            headers: {
+                Authorization: `Bearer ${getToken()}`
+            }
+        })
     } catch (error) {
         console.log(error);
         throw error
@@ -31,7 +36,11 @@ export const createMedia = async (formData) => {
 
 export const updateMedia = async (mediaId, formData) => {
     try {
-        return axios.put(`${BASE_URL}/medias/${mediaId}`, formData)
+        return axios.put(`${BASE_URL}/medias/${mediaId}`, formData, {
+            headers: {
+                Authorization: `Bearer ${getToken()}`
+            }
+        })
     } catch (error) {
         console.log(error);
         throw error
@@ -40,7 +49,11 @@ export const updateMedia = async (mediaId, formData) => {
 
 export const deleteMedia = async (mediaId) => {
     try {
-        return axios.delete(`${BASE_URL}/medias/${mediaId}`)
+        return axios.delete(`${BASE_URL}/medias/${mediaId}`, {
+            headers: {
+                Authorization: `Bearer ${getToken()}`
+            }
+        })
     } catch (error) {
         console.log(error);
         throw error
