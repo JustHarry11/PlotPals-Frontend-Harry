@@ -35,7 +35,8 @@ export default function MediaUpdate() {
             await updateMedia(mediaId, formData)
             navigate(`/medias/${mediaId}`)
         } catch (error) {
-            setError(error.response.data)
+            console.log(error);
+            
         } finally {
             setIsLoading(false)
         }
@@ -58,6 +59,7 @@ export default function MediaUpdate() {
         <section className="form-page">
             <form onSubmit={handleSubmit}>
                 <input name="title" value={formData.title} onChange={handleChange} />
+                {error.title && <p>{error.title}</p>}
                 {/* other fields go here */}
                 <button type="submit">{ isLoading ? `Loading...` : `Edit`}</button>
             </form>
