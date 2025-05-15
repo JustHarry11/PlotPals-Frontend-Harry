@@ -16,7 +16,7 @@ export const favIndex = async () => {
     try {
         return axios.get(`${BASE_URL}/favourites`, {
             headers: {
-                Authorization: `Bearer ${getToken}`
+                Authorization: `Bearer ${getToken()}`
             }
         })
     } catch (error) {
