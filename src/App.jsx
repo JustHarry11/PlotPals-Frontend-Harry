@@ -2,6 +2,7 @@ import './App.css'
 import { Routes, Route } from 'react-router'
 import MediaIndex from './components/MediaIndex/MediaIndex'
 import UserLogin from './components/UserLogin/UserLogin'
+import UserRegister from './components/UserRegister/UserRegister'
 
 
 //import { useContext } from 'react'
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/medias' element={<MediaIndex />}/>
         <Route path='/login' element={<UserLogin />}/>
+        <Route path='/register' element={<UserRegister />}/>
       </Routes>
     </>
   )
