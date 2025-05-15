@@ -1,5 +1,8 @@
 import './App.css'
 import { Routes, Route } from 'react-router'
+import NavBar from './components/Navbar/Navbar'
+
+
 import MediaIndex from './components/MediaIndex/MediaIndex'
 import UserLogin from './components/UserLogin/UserLogin'
 import UserRegister from './components/UserRegister/UserRegister'
@@ -13,10 +16,11 @@ function App() {
   //const { user } = useContext(UserContext)
   return (
     <>
+      <NavBar />
       <Routes>
-        <Route path='/medias' element={<MediaIndex />}/>
-        <Route path='/login' element={<UserLogin />}/>
-        <Route path='/register' element={<UserRegister />}/>
+        <Route path='/medias' element={<MediaIndex />} />
+        <Route path='/login' element={<UserLogin />} />
+        <Route path='/register' element={<UserRegister />} />
       </Routes>
     </>
   )
