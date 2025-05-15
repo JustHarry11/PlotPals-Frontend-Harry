@@ -9,7 +9,6 @@ export default function FavouriteIndex(){
     const { user } = useContext(UserContext)
     const { data: favourites, isLoading, error } = useFetch(favIndex, [])
     
-    
     return (
         <>
             <h1>{ user.username } Favourites</h1>
@@ -20,7 +19,7 @@ export default function FavouriteIndex(){
                         ? <p>Loading</p>
                         : favourites.length > 0
                             ? favourites.map(favourite => (
-                                <Link key={favourite._id} to={`/favourites/${favourite._id}`}>
+                                <Link key={favourite._id} to={`/medias/${favourite._id}`}>
                                     <article>
                                         <h2>{favourite.title}</h2>
                                     </article>
@@ -32,6 +31,7 @@ export default function FavouriteIndex(){
         
         </>
     )
+    
 
 
 }
