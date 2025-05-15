@@ -23,7 +23,7 @@ export const singleMedia = async (mediaId) => {
 
 export const createMedia = async (formData) => {
     try {
-        return axios.post(`${BASE_URL}/medias`, formData, {
+        return axios.postForm(`${BASE_URL}/medias`, formData, {
             headers: {
                 Authorization: `Bearer ${getToken()}`
             }
@@ -36,7 +36,7 @@ export const createMedia = async (formData) => {
 
 export const updateMedia = async (mediaId, formData) => {
     try {
-        return axios.put(`${BASE_URL}/medias/${mediaId}`, formData, {
+        return axios.putForm(`${BASE_URL}/medias/${mediaId}`, formData, {
             headers: {
                 Authorization: `Bearer ${getToken()}`
             }
