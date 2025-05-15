@@ -10,6 +10,8 @@ import MediaUpdate from './components/MediaUpdate/MediaUpdate'
 import UserRegister from './components/UserRegister/UserRegister'
 import UserFavourite from './components/UserFavourite/UserFavourite'
 
+import FavouriteHome from './components/HomeFavourite/HomeFavourite'
+
 
 //import { useContext } from 'react'
 //import { UserContext } from './contexts/UserContext'
@@ -29,6 +31,7 @@ function App() {
         <Route path='/login' element={<UserLogin />} />
         <Route path='/register' element={<UserRegister />} />
         <Route path='/favourites' element={<UserFavourite />} />
+        <Route path='/home' element={<FavouriteHome />} />
       </Routes>
     </>
   )
