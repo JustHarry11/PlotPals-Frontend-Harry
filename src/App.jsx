@@ -9,6 +9,7 @@ import MediaShow from './components/MediaShow/MediaShow'
 import MediaUpdate from './components/MediaUpdate/MediaUpdate'
 import UserRegister from './components/UserRegister/UserRegister'
 import UserFavourite from './components/UserFavourite/UserFavourite'
+import MediaCreate from './components/MediaCreate/MediaCreate'
 
 
 //import { useContext } from 'react'
@@ -23,10 +24,9 @@ function App() {
       <Routes>
         <Route path='/medias' element={<MediaIndex />}/>
         <Route path='/login' element={<UserLogin />}/>
+        <Route path='/medias/new' element={<MediaCreate />}/>
         <Route path='/medias/:mediaId' element={<MediaShow />}/>
         <Route path='/medias/:mediaId/edit' element={<MediaUpdate />}/>
-        <Route path='/medias' element={<MediaIndex />} />
-        <Route path='/login' element={<UserLogin />} />
         <Route path='/register' element={<UserRegister />} />
         <Route path='/favourites' element={<UserFavourite />} />
       </Routes>
