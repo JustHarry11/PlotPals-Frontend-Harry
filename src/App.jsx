@@ -6,6 +6,7 @@ import NavBar from './components/Navbar/Navbar'
 import MediaIndex from './components/MediaIndex/MediaIndex'
 import UserLogin from './components/UserLogin/UserLogin'
 import UserRegister from './components/UserRegister/UserRegister'
+import UserFavourite from './components/UserFavourite/UserFavourite'
 
 
 //import { useContext } from 'react'
@@ -21,6 +22,7 @@ function App() {
         <Route path='/medias' element={<MediaIndex />} />
         <Route path='/login' element={<UserLogin />} />
         <Route path='/register' element={<UserRegister />} />
+        <Route path='/favourites' element={<UserFavourite />} />
       </Routes>
     </>
   )
