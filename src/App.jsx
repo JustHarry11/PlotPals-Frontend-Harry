@@ -2,6 +2,8 @@ import './App.css'
 import { Routes, Route } from 'react-router'
 import MediaIndex from './components/MediaIndex/MediaIndex'
 import UserLogin from './components/UserLogin/UserLogin'
+import MediaShow from './components/MediaShow/MediaShow'
+import MediaUpdate from './components/MediaUpdate/MediaUpdate'
 
 
 //import { useContext } from 'react'
@@ -15,6 +17,8 @@ function App() {
       <Routes>
         <Route path='/medias' element={<MediaIndex />}/>
         <Route path='/login' element={<UserLogin />}/>
+        <Route path='/medias/:mediaId' element={<MediaShow />}/>
+        <Route path='/medias/:mediaId/edit' element={<MediaUpdate />}/>
       </Routes>
     </>
   )
