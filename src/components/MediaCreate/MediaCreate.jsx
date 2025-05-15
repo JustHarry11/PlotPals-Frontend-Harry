@@ -32,8 +32,11 @@ export default function MediaCreate() {
         setFormData({ ...formData, genres: selectedIds})
     }
 
-    function handleChange({ target: {name, value} }) {
+    function handleChange({ target: {name, value, type, files} }) {
         setFormData({...formData, [name]: value})
+        if (type === 'file') {
+            value = files[0]
+        }
     }
 
     async function handleSubmit(event) {
@@ -81,7 +84,7 @@ export default function MediaCreate() {
                 
                 <div className="input-control">
                     <label htmlFor="imageUrl">Image URL</label>
-                    {/* Add image handler */}
+                    <input type="file" name="imageUrl" id="imageUrl" onChange={handleChange}/>
                 </div>
 
                 <div className="input-control">
