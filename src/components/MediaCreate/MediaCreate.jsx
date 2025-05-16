@@ -3,7 +3,7 @@ import './MediaCreate.css'
 import { UserContext } from '../../contexts/UserContext'
 import { createMedia } from '../../services/medias'
 import { genreIndex } from '../../services/genres'
-import { useNavigate } from 'react-router'
+import { Navigate, useNavigate } from 'react-router'
 import Select from 'react-select'
 
 export default function MediaCreate() {
@@ -33,10 +33,10 @@ export default function MediaCreate() {
     }
 
     function handleChange({ target: {name, value, type, files} }) {
-        setFormData({...formData, [name]: value})
         if (type === 'file') {
             value = files[0]
         }
+        setFormData({...formData, [name]: value})
     }
 
     async function handleSubmit(event) {
@@ -65,6 +65,7 @@ export default function MediaCreate() {
     getGenres()
     }, [])
 
+    if (!user) return <Navigate to='/register'/>
 
     return (
         <section className="form-page">

@@ -24,6 +24,7 @@ export default function NavBar() {
                 {user
                     ? (
                         <>
+                            <NavLink to="/medias/new">Add Media</NavLink>
                             <NavLink to="/favourites">Your Favourites</NavLink>
                             <NavLink onClick={handleSignOut} to="/login">Sign Out</NavLink>
                         </>
