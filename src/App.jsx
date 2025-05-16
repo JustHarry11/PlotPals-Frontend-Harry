@@ -12,6 +12,7 @@ import UserFavourite from './components/UserFavourite/UserFavourite'
 import MediaCreate from './components/MediaCreate/MediaCreate'
 
 import FavouriteHome from './components/HomeFavourite/HomeFavourite'
+import GenreIndex from './components/GenreIndex/GenreIndex'
 import GenreShow from './components/GenreShow/GenreShow'
 
 
@@ -33,7 +34,8 @@ function App() {
         <Route path='/register' element={<UserRegister />} />
         <Route path='/favourites' element={<UserFavourite />} />
         <Route path='/home' element={<FavouriteHome />} />
-        <Route path='/genres'element={<GenreShow />} />
+        <Route path='/genres'element={<GenreIndex />} />
+        <Route path='/genres/:genreId'element={<GenreShow />} />
       </Routes>
     </>
   )
