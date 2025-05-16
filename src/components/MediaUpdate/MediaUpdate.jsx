@@ -68,9 +68,9 @@ export default function MediaUpdate() {
         getMediaData()
     }, [mediaId])
 
-    if (!user) return <Navigate to='/register'/>
+    if (!user) return <Navigate to='/login'/>
 
-    if (formData.owner && formData.owner !== user._id) return <Navigate to='/register'/>
+    if (formData.owner && formData.owner !== user._id) return <Navigate to='/login'/>
 
     return (
         <section className="form-page">

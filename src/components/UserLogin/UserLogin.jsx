@@ -14,13 +14,13 @@ export default function UserLogin() {
     })
 
     const [error, setError] = useState({})
-    //const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     const navigate = useNavigate()
 
     async function handleSubmit(evt) {
         evt.preventDefault()
-        //setIsLoading(true)
+        setIsLoading(true)
         try {
             const { data } = await loginUser(userData)
             setToken(data.token)
@@ -29,7 +29,7 @@ export default function UserLogin() {
         } catch (error) {
             setError(error.response.data)
         } finally {
-            //setIsLoading(false)
+            setIsLoading(false)
         }
     }
 
@@ -62,7 +62,7 @@ export default function UserLogin() {
 
                 {error.message && <p className="error-message">{error.message}</p>}
 
-                <button type="submit">Log In</button>
+                <button type="submit">{ isLoading ? 'Logging In...' : 'Log In'}</button>
             </form>
         </section>
     )

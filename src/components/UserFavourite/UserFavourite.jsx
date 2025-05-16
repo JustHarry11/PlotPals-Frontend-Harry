@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { Link, Navigate } from 'react-router'
 import useFetch from '../../hooks/useFetch'
 import { favIndex } from '../../services/favourites'
 import { useContext } from 'react'
@@ -7,14 +7,16 @@ import { UserContext } from '../../contexts/UserContext'
 export default function FavouriteIndex(){
     
     const { user } = useContext(UserContext)
-    const { data: favourites, isLoading, error } = useFetch(favIndex, [])
+    const { data: favourites, isLoading, error } = useFetch(user ? favIndex : null, [])
+
+    if (!user) return <Navigate to='/login'/>
     
     return (
         <>
             <h1>{ user.username } Favourites</h1>
             <section className='favourite-list'>
                 {error
-                    ?<p className='error-message'>{error}</p>
+                    ? <p className='error-message'>{error}</p>
                     : isLoading
                         ? <p>Loading</p>
                         : favourites.length > 0
@@ -31,7 +33,4 @@ export default function FavouriteIndex(){
         
         </>
     )
-    
-
-
 }

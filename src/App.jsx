@@ -16,26 +16,26 @@ import GenreIndex from './components/GenreIndex/GenreIndex'
 import GenreShow from './components/GenreShow/GenreShow'
 
 
-//import { useContext } from 'react'
-//import { UserContext } from './contexts/UserContext'
-
 function App() {
 
-  //const { user } = useContext(UserContext)
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path='/medias' element={<MediaIndex />}/>
-        <Route path='/login' element={<UserLogin />}/>
-        <Route path='/medias/new' element={<MediaCreate />}/>
-        <Route path='/medias/:mediaId' element={<MediaShow />}/>
-        <Route path='/medias/:mediaId/edit' element={<MediaUpdate />}/>
-        <Route path='/register' element={<UserRegister />} />
-        <Route path='/favourites' element={<UserFavourite />} />
         <Route path='/home' element={<FavouriteHome />} />
+        <Route path='/medias' element={<MediaIndex />}/>
+        <Route path='/medias/:mediaId' element={<MediaShow />}/>
         <Route path='/genres'element={<GenreIndex />} />
         <Route path='/genres/:genreId'element={<GenreShow />} />
+
+
+        <Route path='/medias/new' element={<MediaCreate />}/>
+        <Route path='/medias/:mediaId/edit' element={<MediaUpdate />}/>
+        <Route path='/favourites' element={<UserFavourite />} />
+
+        <Route path='/login' element={<UserLogin />}/>
+        <Route path='/register' element={<UserRegister />} />
+
       </Routes>
     </>
   )

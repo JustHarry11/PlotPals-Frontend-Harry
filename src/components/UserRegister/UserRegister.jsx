@@ -16,21 +16,21 @@ export default function UserRegister() {
     })
 
     const [error, setError] = useState({})
-    //const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     const navigate = useNavigate()
 
     async function handleSubmit(evt) {
         evt.preventDefault()
-        //setIsLoading(true)
+        setIsLoading(true)
         try {
             await registerUser(userData)
-            navigate(`/register`)
+            navigate(`/login`)
         } catch (error) {
             setError(error.response.data)
             console.log(error.response.data)
         } finally {
-            //setIsLoading(false)
+            setIsLoading(false)
         }
     }
 
@@ -73,8 +73,10 @@ export default function UserRegister() {
                     {error.passwordConfirmatione && <p className="error-message">{error.passwordConfirmation}</p>}
                 </div>
 
-                <button type="submit">Create User</button>
-                <small>Already have an account? <Link to="/login">Log back in</Link></small>
+                <button type="submit">{ isLoading ? 'Creating User...' : 'Create User'}</button>
+                <div className="form-footer">
+                <small><span>Already have an account?</span> <Link to="/login" className="login-link">Log back in</Link></small>
+                </div>
             </form>
         </section>
     )

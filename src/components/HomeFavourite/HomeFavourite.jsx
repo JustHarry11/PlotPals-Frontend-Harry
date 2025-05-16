@@ -15,9 +15,7 @@ export default function FavouriteHome() {
         .filter(favourite => favourite.type === 'tvshow')
         .sort((a, b) => b.favourites.length - a.favourites.length)
         .slice(0, 5)
-
-    console.log(favouriteMovies)
-    console.log(favouriteTVShows)
+        
     return (
         <>
             <section className='favourite-list'>
