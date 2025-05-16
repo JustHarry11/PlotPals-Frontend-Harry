@@ -3,7 +3,7 @@ import './MediaUpdate.css'
 import { UserContext } from '../../contexts/UserContext'
 import { singleMedia, updateMedia } from '../../services/medias'
 import { genreIndex } from '../../services/genres'
-import { useNavigate, useParams } from 'react-router'
+import { Navigate, useNavigate, useParams } from 'react-router'
 import Select from 'react-select'
 
 export default function MediaUpdate() {
@@ -29,11 +29,14 @@ export default function MediaUpdate() {
 
     
     function handleGenreChange(selectedOptions) {
-        const selectedIds = selectedOptions.map(genreChange => genreChange.value)
-        setFormData({ ...formData, genres: selectedIds})
+        
+        setFormData({ ...formData, genres: selectedOptions})
     }
 
-    function handleChange({ target: {name, value} }) {
+    function handleChange({ target: {name, value, type, files} }) {
+        if (type === 'file') {
+            value = files[0]
+        }
         setFormData({...formData, [name]: value})
     }
 
@@ -41,7 +44,8 @@ export default function MediaUpdate() {
         event.preventDefault()
         setIsLoading(true)
         try {
-            await updateMedia(mediaId, formData)
+            const selectedIds = formData.genres.map(genreChange => genreChange.value)
+            await updateMedia(mediaId, {...formData, genres: selectedIds})
             navigate(`/medias/${mediaId}`)
         } catch (error) {
             setError(error.response.data)
@@ -54,9 +58,9 @@ export default function MediaUpdate() {
         async function getMediaData() {
             try {
                 const { data: mediaData } = await singleMedia(mediaId)
-                setFormData(mediaData)
+                setFormData({...mediaData, genres: mediaData.genres.map(genre => ({ value: genre._id, label: genre.name }))})
                 const { data: genreData } = await genreIndex()
-                setGenres(genreData)
+                setGenres(genreData.map(genre => ({ value: genre._id, label: genre.name })))
             } catch (error) {
                 setError({...error, preload: 'Failed to preload values'})
             }
@@ -64,6 +68,11 @@ export default function MediaUpdate() {
         getMediaData()
     }, [mediaId])
 
+    if (!user) return <Navigate to='/register'/>
+
+    if (formData.owner && formData.owner !== user._id) return <Navigate to='/register'/>
+// console.log(formData.genres.map(genre => ({ value: genre._id, label: genre.name })));
+console.log(formData.genres);
 
     return (
         <section className="form-page">
@@ -81,7 +90,7 @@ export default function MediaUpdate() {
                 
                 <div className="input-control">
                     <label htmlFor="imageUrl">Image URL</label>
-                    {/* Add image handler */}
+                    <input type="file" name="imageUrl" id="imageUrl" onChange={handleChange}/>
                 </div>
 
                 <div className="input-control">
@@ -90,11 +99,8 @@ export default function MediaUpdate() {
                         isMulti
                         name='genres'
                         placeholder="Select genres..."
-                        options={genres.map(genre => ({ value: genre._id, label: genre.name }))}
-                        value={genres
-                        .filter(genre => formData.genres.includes(genre._id))
-                        .map(genre => ({ value: genre._id, label: genre.name }))
-                        }
+                        options={genres}
+                        value={formData.genres}
                         onChange={handleGenreChange}
                     />
                 </div>
