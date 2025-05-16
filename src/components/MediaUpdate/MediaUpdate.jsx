@@ -30,7 +30,6 @@ export default function MediaUpdate() {
 
     
     function handleGenreChange(selectedOptions) {
-        
         setFormData({ ...formData, genres: selectedOptions})
     }
 
@@ -72,8 +71,6 @@ export default function MediaUpdate() {
     if (!user) return <Navigate to='/register'/>
 
     if (formData.owner && formData.owner !== user._id) return <Navigate to='/register'/>
-// console.log(formData.genres.map(genre => ({ value: genre._id, label: genre.name })));
-console.log(formData.genres);
 
     return (
         <section className="form-page">
