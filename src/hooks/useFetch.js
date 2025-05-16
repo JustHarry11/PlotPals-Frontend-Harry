@@ -19,5 +19,5 @@ export default function useFetch(mediaFunction, initalDataValue, arg){
         fetchData()
     }, [mediaFunction, arg])
 
-    return { data, isLoading, error}
+    return { data, setData, isLoading, error}
 }

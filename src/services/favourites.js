@@ -24,3 +24,28 @@ export const favIndex = async () => {
         throw error
     }
 }
+
+export const favCreate = async (mediaId) => {
+    try {
+        return axios.post(`${BASE_URL}/medias/${mediaId}/fav`, null, {
+            headers: {
+                Authorization: `Bearer ${getToken()}`
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        throw error
+    }
+}
+export const favDelete = async (mediaId) => {
+    try {
+        return axios.delete(`${BASE_URL}/medias/${mediaId}/fav`, {
+            headers: {
+                Authorization: `Bearer ${getToken()}`
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        throw error
+    }
+}
