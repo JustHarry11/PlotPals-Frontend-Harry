@@ -19,6 +19,7 @@ export default function NavBar() {
             </div>
             <nav>
                 <NavLink to="/medias">Media</NavLink>
+                <NavLink to="/genres">Genre</NavLink>
 
                 {user
                     ? (
