@@ -4,6 +4,7 @@ import { UserContext } from '../../contexts/UserContext'
 import { singleMedia, updateMedia } from '../../services/medias'
 import { genreIndex } from '../../services/genres'
 import { Navigate, useNavigate, useParams } from 'react-router'
+import ErrorMessage from '../ErrorMessage'
 import Select from 'react-select'
 
 export default function MediaUpdate() {
@@ -151,6 +152,8 @@ console.log(formData.genres);
                     <label htmlFor="releaseDate">Release Date</label>
                     <input type="text" name="releaseDate" id="releaseDate" value={formData.releaseDate} onChange={handleChange} />
                 </div>
+
+                <ErrorMessage message={error.message}/>
 
                 <button type="submit">{ isLoading ? `Loading...` : `Submit`}</button>
             </form>

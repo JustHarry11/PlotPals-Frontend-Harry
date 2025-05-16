@@ -4,6 +4,7 @@ import { UserContext } from '../../contexts/UserContext'
 import { createMedia } from '../../services/medias'
 import { genreIndex } from '../../services/genres'
 import { Navigate, useNavigate } from 'react-router'
+import ErrorMessage from '../ErrorMessage'
 import Select from 'react-select'
 
 export default function MediaCreate() {
@@ -156,6 +157,9 @@ export default function MediaCreate() {
                     <input type="text" name="releaseDate" id="releaseDate" value={formData.releaseDate} onChange={handleChange} />
                     {error.releaseDate && <p className='error-message'>{error.releaseDate}</p>}
                 </div>
+
+                <ErrorMessage message={error.message}/>
+                
 
                 <button type="submit">{ isLoading ? `Loading...` : `Submit`}</button>
             </form>
