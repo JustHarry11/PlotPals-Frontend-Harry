@@ -66,7 +66,7 @@ export default function MediaCreate() {
     getGenres()
     }, [])
 
-    if (!user) return <Navigate to='/register'/>
+    if (!user) return <Navigate to='/login' />
 
     return (
         <section className="form-page">
