@@ -12,6 +12,7 @@ import UserFavourite from './components/UserFavourite/UserFavourite'
 import MediaCreate from './components/MediaCreate/MediaCreate'
 
 import FavouriteHome from './components/HomeFavourite/HomeFavourite'
+import GenreShow from './components/GenreShow/GenreShow'
 
 
 //import { useContext } from 'react'
@@ -32,6 +33,7 @@ function App() {
         <Route path='/register' element={<UserRegister />} />
         <Route path='/favourites' element={<UserFavourite />} />
         <Route path='/home' element={<FavouriteHome />} />
+        <Route path='/genres'element={<GenreShow />} />
       </Routes>
     </>
   )
