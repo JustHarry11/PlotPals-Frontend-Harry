@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route } from 'react-router'
+import { Routes, Route, Navigate } from 'react-router'
 import NavBar from './components/Navbar/Navbar'
 
 
@@ -22,6 +22,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
+        <Route path='/' element={<Navigate to='/home' replace/>}/>
         <Route path='/home' element={<FavouriteHome />} />
         <Route path='/medias' element={<MediaIndex />}/>
         <Route path='/medias/:mediaId' element={<MediaShow />}/>
