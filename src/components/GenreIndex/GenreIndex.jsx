@@ -10,7 +10,7 @@ export default function GenreIndex() {
     return (
         <>
             <section className='genre-index'>
-                <h1>Genres</h1>
+                <h1 className="genre-title-index">Genres</h1>
                 <div className='genre-grid'>
                     {error
                         ? <p className='error-message'>{error}</p>
