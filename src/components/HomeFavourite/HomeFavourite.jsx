@@ -18,34 +18,29 @@ export default function FavouriteHome() {
         .slice(0, 6)
 
     return (
+
         <div className="home-container">
+            {error
+                ? <p className='error-message'>{error}</p>
+                : isLoading
+                    ? <p className='loading'>Loading...</p>
+                    : <>
+                        <div className="media-section">
+                            <h1 className='home-title'>Favourite Movies</h1>
+                            <div className="media-grid">
+                                {favouriteMovies.map(media => <MediaCard key={media._id} media={media} />)}
+                            </div>
+                        </div>
 
-            <div className="media-section">
-                <h1 className='home-title'>Favourite Movies</h1>
-                <div className="media-grid">
-                    {isLoading ? (
-                        <p>Loading...</p>
-                    ) : error ? (
-                        <p className="error-message">{error}</p>
-                    ) : (
-                        favouriteMovies.map(media => <MediaCard key={media._id} media={media} />)
-                    )}
-                </div>
-            </div>
-
-            <div className="media-section">
-                <h1 className='home-title'>Favourite TV Shows</h1>
-                <div className="media-grid">
-                    {isLoading ? (
-                        <p>Loading...</p>
-                    ) : error ? (
-                        <p className="error-message">{error}</p>
-                    ) : (
-                        favouriteTVShows.map(media => <MediaCard key={media._id} media={media} />)
-                    )}
-                </div>
-            </div>
-
+                        <div className="media-section">
+                            <h1 className='home-title'>Favourite TV Shows</h1>
+                            <div className="media-grid">
+                                {favouriteTVShows.map(media => <MediaCard key={media._id} media={media} />)
+                                }
+                            </div>
+                        </div>
+                    </>
+            }
         </div>
     )
 }

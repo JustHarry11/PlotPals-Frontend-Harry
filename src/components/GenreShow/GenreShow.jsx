@@ -22,7 +22,7 @@ export default function GenreShow() {
                     {error
                         ? <p className='error-message'>{error}</p>
                         : isLoading
-                            ? <p>Loading</p>
+                            ? <p className="loading">Loading...</p>
                             : genre.media.length > 0
                                 ? genre.media.map(media => (<MediaCard key={media._id} media={media} />
                                 ))

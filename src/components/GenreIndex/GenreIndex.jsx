@@ -15,7 +15,7 @@ export default function GenreIndex() {
                     {error
                         ? <p className='error-message'>{error}</p>
                         : isLoading
-                            ? <p>Loading</p>
+                            ? <p className='loading'>Loading...</p>
                             : genres.length > 0
                                 ? genres.map(genre => (
                                     <Link key={genre._id} to={`/genres/${genre._id}`}>

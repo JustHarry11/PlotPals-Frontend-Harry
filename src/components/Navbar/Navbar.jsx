@@ -24,7 +24,9 @@ export default function NavBar() {
                     <NavLink to="/genres">Genre</NavLink>
                 </div>
                 <div className="nav-middle">
+                    <NavLink to="/home">
                     <h1>PlotPals</h1>
+                    </NavLink>
                 </div>
                     <nav className="nav-right">
                         {user
