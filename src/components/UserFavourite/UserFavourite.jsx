@@ -1,8 +1,10 @@
-import { Link, Navigate } from 'react-router'
+import { Navigate } from 'react-router'
 import useFetch from '../../hooks/useFetch'
 import { favIndex } from '../../services/favourites'
 import { useContext } from 'react'
 import { UserContext } from '../../contexts/UserContext'
+import MediaCard from '../MediaCard/MediaCard'
+import './UserFavourite.css'
 
 export default function FavouriteIndex(){
     
@@ -13,20 +15,17 @@ export default function FavouriteIndex(){
     
     return (
         <>
-            <h1>{ user.username.charAt(0).toUpperCase() + user.username.slice(1) } Favourites</h1>
-            <section className='favourite-list'>
+            <h1 className='user-favourites-title'>
+                { user.username.charAt(0).toUpperCase() + user.username.slice(1) }'s Favourites
+            </h1>
+
+            <section className='favourites-list'>
                 {error
                     ? <p className='error-message'>{error}</p>
                     : isLoading
                         ? <p>Loading</p>
                         : favourites.length > 0
-                            ? favourites.map(favourite => (
-                                <Link key={favourite._id} to={`/medias/${favourite._id}`}>
-                                    <article>
-                                        <h2>{favourite.title}</h2>
-                                    </article>
-                                </Link>
-                            ))
+                            ? favourites.map(favourite => <MediaCard key={favourite._id} media={favourite}/>)
                         : <p>No Favourites Found</p>
                 }
             </section>
