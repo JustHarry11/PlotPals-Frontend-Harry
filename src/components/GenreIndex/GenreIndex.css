@@ -1,0 +1,18 @@
+.genre-index {
+  padding: 2rem;
+}
+
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.genre {
+  /* background-color: #f5f5f5; */
+  border: 5px solid rgb(125, 122, 122);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+}
