@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router";
 import useFetch from "../../hooks/useFetch";
 import { singleGenre } from "../../services/genres";
+import MediaCard from "../MediaCard/MediaCard";
+import './GenreShow.css'
 
 export default function GenreShow() {
 
@@ -14,23 +16,19 @@ export default function GenreShow() {
     return (
         <>
             <div className="genre-container">
-                <section className='genre-show'>
-                    <h1>{genre.name}</h1>
+
+                <h1 className="genre-title">{genre.name}</h1>
+                <div className="genre-show">
                     {error
                         ? <p className='error-message'>{error}</p>
                         : isLoading
                             ? <p>Loading</p>
                             : genre.media.length > 0
-                                ? genre.media.map(media => (
-                                    <Link key={media._id} to={`/medias/${media._id}`}>
-                                        <article>
-                                            <h2>{media.title} </h2>
-                                        </article>
-                                    </Link>
+                                ? genre.media.map(media => (<MediaCard key={media._id} media={media} />
                                 ))
-                                : <p>There are no movies or shows with that genre. Do you know any?</p>
+                                :<p>There are no movies or shows with that genre. Do you know any?</p>
                     }
-                </section>
+                </div>
             </div>
 
         </>

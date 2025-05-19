@@ -2,6 +2,12 @@
   padding: 2rem;
 }
 
+.genre-title-index {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
 .genre-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
