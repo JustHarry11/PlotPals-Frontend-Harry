@@ -21,7 +21,7 @@ export default function FavouriteHome() {
         <div className="home-container">
 
             <div className="media-section">
-                <h1>Favourite Movies</h1>
+                <h1 className='home-title'>Favourite Movies</h1>
                 <div className="media-grid">
                     {isLoading ? (
                         <p>Loading...</p>
@@ -34,7 +34,7 @@ export default function FavouriteHome() {
             </div>
 
             <div className="media-section">
-                <h1>Favourite TV Shows</h1>
+                <h1 className='home-title'>Favourite TV Shows</h1>
                 <div className="media-grid">
                     {isLoading ? (
                         <p>Loading...</p>
