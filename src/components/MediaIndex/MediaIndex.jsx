@@ -1,8 +1,8 @@
 import { mediasIndex } from "../../services/medias";
-import { Link } from 'react-router'
 import useFetch from "../../hooks/useFetch";
 import './MediaIndex.css'
 import { useState } from "react";
+import MediaCard from "../MediaCard/MediaCard";
 
 export default function MediaIndex() {
 
@@ -18,11 +18,11 @@ export default function MediaIndex() {
         if (selectedType === 'all') return true
         return media.type === selectedType
     })
-
+    
     return (
         <>
-            <h1>Media</h1>
-            <div className="filter-container">
+            <h1 className="media-index-title">Media</h1>
+            <div className="media-filter-container">
                 <label htmlFor="type-select">Filter by type: </label>
                 <select id="type-select" value={selectedType} onChange={handleFilterChange}>
                     <option value="all">All</option>
@@ -32,18 +32,13 @@ export default function MediaIndex() {
             </div>
 
 
-            <section className="media-list">
+            <section className="media-index-list">
                 {error
                     ? <p className="error-message">{error}</p>
                     : isLoading
                         ? <p className="loading">Loading...</p>
                         : filteredMedias.length > 0
-                            ? filteredMedias.map(media => (
-                                <Link key={media._id} to={`/medias/${media._id}`}>
-                                    <article>
-                                        <h2>{media.title}</h2>
-                                    </article>
-                                </Link>
+                            ? filteredMedias.map(media => ( <MediaCard key={media._id} media={media}/>
                             ))
                             : <p>No media found. Please try again later.</p>
 
