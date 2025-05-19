@@ -23,7 +23,7 @@ export default function FavouriteIndex(){
                 {error
                     ? <p className='error-message'>{error}</p>
                     : isLoading
-                        ? <p>Loading</p>
+                        ? <p className='loading'>Loading...</p>
                         : favourites.length > 0
                             ? favourites.map(favourite => <MediaCard key={favourite._id} media={favourite}/>)
                         : <p>No Favourites Found</p>
