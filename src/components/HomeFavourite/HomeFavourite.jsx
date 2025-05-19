@@ -10,12 +10,12 @@ export default function FavouriteHome() {
     const favouriteMovies = [...favourites]
         .filter(favourite => favourite.type === 'movie')
         .sort((a, b) => b.favourites.length - a.favourites.length)
-        .slice(0, 5)
+        .slice(0, 6)
 
     const favouriteTVShows = [...favourites]
         .filter(favourite => favourite.type === 'tvshow')
         .sort((a, b) => b.favourites.length - a.favourites.length)
-        .slice(0, 5)
+        .slice(0, 6)
 
     return (
         <div className="home-container">

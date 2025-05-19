@@ -11,20 +11,23 @@ export default function GenreIndex() {
         <>
             <section className='genre-index'>
                 <h1>Genres</h1>
-                {error
-                    ? <p className='error-message'>{error}</p>
-                    : isLoading
-                        ? <p>Loading</p>
-                        : genres.length > 0
-                            ? genres.map(genre => (
-                                <Link key={genre._id} to={`/genres/${genre._id}`}>
-                                    <article>
-                                        <h2>{genre.name} </h2>
-                                    </article>
-                                </Link>
-                            ))
-                            : <p>No Genres Found</p>
-                }
+                <div className='genre-grid'>
+                    {error
+                        ? <p className='error-message'>{error}</p>
+                        : isLoading
+                            ? <p>Loading</p>
+                            : genres.length > 0
+                                ? genres.map(genre => (
+                                    <Link key={genre._id} to={`/genres/${genre._id}`}>
+                                        <div className='genre'>
+                                            <h2>{genre.name}</h2>
+                                        </div>
+                                    </Link>
+                                ))
+                                : <p>No Genres Found</p>
+                    }
+                </div>
+
             </section>
 
         </>
