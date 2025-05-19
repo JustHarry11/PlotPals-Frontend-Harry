@@ -13,7 +13,7 @@ export default function FavouriteIndex(){
     
     return (
         <>
-            <h1>{ user.username } Favourites</h1>
+            <h1>{ user.username.charAt(0).toUpperCase() + user.username.slice(1) } Favourites</h1>
             <section className='favourite-list'>
                 {error
                     ? <p className='error-message'>{error}</p>
