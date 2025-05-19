@@ -1,6 +1,7 @@
-import { Link } from 'react-router'
 import useFetch from '../../hooks/useFetch'
 import { favHome } from '../../services/favourites'
+import './HomeFavourite.css'
+import MediaCard from '../MediaCard/MediaCard'
 
 export default function FavouriteHome() {
 
@@ -15,45 +16,36 @@ export default function FavouriteHome() {
         .filter(favourite => favourite.type === 'tvshow')
         .sort((a, b) => b.favourites.length - a.favourites.length)
         .slice(0, 5)
-        
+
     return (
-        <>
-            <section className='favourite-list'>
+        <div className="home-container">
+
+            <div className="media-section">
                 <h1>Favourite Movies</h1>
-                {error
-                    ? <p className='error-message'>{error}</p>
-                    : isLoading
-                        ? <p>Loading</p>
-                        : favouriteMovies.length > 0
-                            ? favouriteMovies.map(favourite => (
-                                <Link key={favourite._id} to={`/medias/${favourite._id}`}>
-                                    <article>
-                                        <h2>{favourite.title}  ♥️  {favourite.favourites.length}</h2>
-                                    </article>
-                                </Link>
-                            ))
-                            : <p>No Favourites Found</p>
-                }
-            </section>
+                <div className="media-grid">
+                    {isLoading ? (
+                        <p>Loading...</p>
+                    ) : error ? (
+                        <p className="error-message">{error}</p>
+                    ) : (
+                        favouriteMovies.map(media => <MediaCard key={media._id} media={media} />)
+                    )}
+                </div>
+            </div>
 
-            <section className='favourite-list'>
-                <h1>Favourite Shows</h1>
-                {error
-                    ? <p className='error-message'>{error}</p>
-                    : isLoading
-                        ? <p>Loading</p>
-                        : favouriteTVShows.length > 0
-                            ? favouriteTVShows.map(favourite => (
-                                <Link key={favourite._id} to={`/medias/${favourite._id}`}>
-                                    <article>
-                                        <h2>{favourite.title}  ♥️  {favourite.favourites.length}</h2>
-                                    </article>
-                                </Link>
-                            ))
-                            : <p>No Favourites Found</p>
-                }
-            </section>
+            <div className="media-section">
+                <h1>Favourite TV Shows</h1>
+                <div className="media-grid">
+                    {isLoading ? (
+                        <p>Loading...</p>
+                    ) : error ? (
+                        <p className="error-message">{error}</p>
+                    ) : (
+                        favouriteTVShows.map(media => <MediaCard key={media._id} media={media} />)
+                    )}
+                </div>
+            </div>
 
-        </>
+        </div>
     )
 }
