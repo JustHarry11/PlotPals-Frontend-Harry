@@ -33,7 +33,7 @@ export default function MediaShow() {
     const handleToggleFavourite = async () => {
         try {
             const serviceFunction = isFavourited ? favDelete : favCreate
-            
+
             const response = await serviceFunction(mediaId)
             setMedia(response.data)
         } catch (error) {
@@ -48,41 +48,52 @@ export default function MediaShow() {
                 : isLoading
                     ? <p className="loading">Loading...</p>
                     : (
-                        <section className="single-media">
+                        <div className="single-media">
                             <h1>{media.title}</h1>
                             <img src={media.imageUrl} alt="" width="250px" />
-                            <h3>Genres:</h3>
 
-                            <Select isMulti isDisabled={true} value={media.genres.map(genre => ({
-                                value: genre._id,
-                                label: genre.name
-                            }))}
-                                components={{
-                                    MultiValueRemove: () => null,
-                                    DropdownIndicator: () => null
-                                }}
-                            />
-                            {media.type === 'movie' &&
-                                <div className="movie">
-                                    <h3>Rating:</h3>
-                                    <p>{media.rating}</p>
-                                    <h3>Length:</h3>
-                                    <p>{media.length}</p>
-                                </div>
-                            }
-                            {media.type === 'tvshow' &&
-                                <div className="tvshow">
-                                    <h3>Episodes:</h3>
-                                    <p>{media.episodeNum}</p>
-                                    <h3>Status:</h3>
-                                    <p>{media.status}</p>
-                                </div>
-                            }
+                            <div>
+                                {media.type === 'movie' ? (
+                                    <>
+                                        <div className="show-top-row">
+                                            <span>⭐ {media.rating}</span>
+                                            <span>❤️ {media.favourites.length}</span>
+                                        </div>
+                                        <div className="show-bottom-row">
+                                            <span>🎞️ {media.length} mins</span>
+                                            <span>📆 {media.releaseDate}</span>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="show-top-row">
+                                            <span>📺 {media.episodeNum} Ep</span>
+                                            <span>❤️ {media.favourites.length}</span>
+                                        </div>
+                                        <div className="show-bottom-row">
+                                            <span>📶 {media.status.charAt(0).toUpperCase() + media.status.slice(1)}</span>
+                                            <span>📆 {media.releaseDate}</span>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                            <div className='show-genres'>
+                                <span>
+                                    <h3>Genres:</h3>
+                                    <div className="media-genres">
+                                        {media.genres.map(genre => (
+                                            <Link key={genre._id} to={`/genres/${genre._id}`}>
+                                                <span className='genre-tag-show'>{genre.name}</span>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </span>
+                            </div>
+
+
+
                             <h3>Description:</h3>
                             <p>{media.description}</p>
-
-                            <h3>♥️</h3>
-                            <p>{media.favourites.length}</p>
 
                             {user && (
                                 <button
@@ -100,7 +111,7 @@ export default function MediaShow() {
                                     <MediaDelete />
                                 </div>
                             }
-                        </section>
+                        </div>
                     )
 
             }
