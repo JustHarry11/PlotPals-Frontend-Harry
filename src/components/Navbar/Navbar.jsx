@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { removeToken } from "../../utils/auth";
+import './Navbar.css'
 
 export default function NavBar() {
 
@@ -14,30 +15,33 @@ export default function NavBar() {
 
     return (
         <header>
-            <div className="brand-logo">
-                <NavLink to="/home">🎥</NavLink>
+            <div className="top-navigation">
+                <div className="nav-left">
+                    <div className="brand-logo">
+                        <NavLink to="/home">🎥</NavLink>
+                    </div>
+                    <NavLink to="/medias">Media</NavLink>
+                    <NavLink to="/genres">Genre</NavLink>
+                </div>
+                    <nav className="nav-right">
+                        {user
+                            ? (
+                                <>
+                                    <NavLink to="/medias/new">Add Media</NavLink>
+                                    <NavLink to="/favourites">Your Favourites</NavLink>
+                                    <NavLink onClick={handleSignOut} to="/login">Sign Out</NavLink>
+                                </>
+                            )
+                            : (
+                                <>
+                                    <NavLink to="/register">Register User</NavLink>
+                                    <NavLink to="/login">Log In</NavLink>
+                                </>
+
+                            )
+                        }
+                    </nav>
             </div>
-            <nav>
-                <NavLink to="/medias">Media</NavLink>
-                <NavLink to="/genres">Genre</NavLink>
-
-                {user
-                    ? (
-                        <>
-                            <NavLink to="/medias/new">Add Media</NavLink>
-                            <NavLink to="/favourites">Your Favourites</NavLink>
-                            <NavLink onClick={handleSignOut} to="/login">Sign Out</NavLink>
-                        </>
-                    )
-                    : (
-                        <>
-                            <NavLink to="/register">Register User</NavLink>
-                            <NavLink to="/login">Log In</NavLink>
-                        </>
-
-                    )
-                }
-            </nav>
         </header>
     )
 }

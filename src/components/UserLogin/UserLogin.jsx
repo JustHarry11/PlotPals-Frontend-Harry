@@ -49,14 +49,14 @@ export default function UserLogin() {
             <form className="form" onSubmit={handleSubmit}>
                 <h1>Log In</h1>
                 <div className="input-control">
-                    <label htmlFor="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email" onChange={handleChange} value={userData.email} required />
+                    <label htmlFor="email" className="register-login">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Email" className="register-input" onChange={handleChange} value={userData.email} required />
                     {error.email && <p className="error-message">{error.email}</p>}
                 </div>
 
                 <div className="input-control">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password" onChange={handleChange} value={userData.password} required />
+                    <label htmlFor="password" className="register-login">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" className="register-input" onChange={handleChange} value={userData.password} required />
                     {error.password && <p className="error-message">{error.password}</p>}
                 </div>
 

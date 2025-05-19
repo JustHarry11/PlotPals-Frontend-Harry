@@ -1,0 +1,52 @@
+#form-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form {
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-control {
+  margin-bottom: 1.5rem;
+}
+
+.input-control .register-login {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.input-control .register-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.error-message {
+  color: #d33;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #4338ca;
+}
+
+small {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.login-link {
+  margin-left: 0.25rem;
+  text-decoration: underline;
+}

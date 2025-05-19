@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import useFetch from '../../hooks/useFetch'
 import { genreIndex } from '../../services/genres'
+import './GenreIndex.css'
 
 export default function GenreIndex() {
 
