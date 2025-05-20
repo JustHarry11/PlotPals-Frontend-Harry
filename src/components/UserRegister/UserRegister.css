@@ -4,6 +4,11 @@
   padding: 2rem;
 }
 
+.register-title {
+  text-align: center;
+  font-size: 3.2rem;
+}
+
 .form {
   max-width: 400px;
   width: 100%;
@@ -41,6 +46,7 @@ button[type="submit"]:hover {
 }
 
 small {
+  display: block;
   text-align: center;
   margin-top: 1rem;
   font-size: 0.875rem;
@@ -49,4 +55,9 @@ small {
 .login-link {
   margin-left: 0.25rem;
   text-decoration: underline;
+}
+
+.register-btn {
+  display: block;
+  margin: 0 auto;
 }

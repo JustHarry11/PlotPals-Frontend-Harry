@@ -48,7 +48,7 @@ export default function UserRegister() {
     return (
         <section id="form-page">
             <form className="form" onSubmit={handleSubmit}>
-                <h1>Register User</h1>
+                <h1 className="register-title">Register User</h1>
 
                 <div className="input-control">
                     <label htmlFor="email" className="register-label">Email</label>
@@ -73,7 +73,7 @@ export default function UserRegister() {
                     {error.passwordConfirmatione && <p className="error-message">{error.passwordConfirmation}</p>}
                 </div>
 
-                <button type="submit">{ isLoading ? 'Creating User...' : 'Create User'}</button>
+                <button type="submit" className="register-btn">{ isLoading ? 'Creating User...' : 'Create User'}</button>
                 <div className="form-footer">
                 <small><span>Already have an account?</span> <Link to="/login" className="login-link">Log back in</Link></small>
                 </div>

@@ -3,11 +3,11 @@
 }
 .genre-page-container {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping if there are too many items */
+  flex-wrap: wrap;
   gap: 10px;
   padding: 10px;
   width: 100%;
-  box-sizing: border-box; /* Ensures padding doesn't increase width */
+  box-sizing: border-box;
   justify-content: center;
   background-color: none;
 }

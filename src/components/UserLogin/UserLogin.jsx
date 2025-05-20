@@ -47,22 +47,22 @@ export default function UserLogin() {
     return (
         <section id="form-page">
             <form className="form" onSubmit={handleSubmit}>
-                <h1>Log In</h1>
+                <h1 className="login-title">Log In</h1>
                 <div className="input-control">
-                    <label htmlFor="email" className="register-login">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email" className="register-input" onChange={handleChange} value={userData.email} required />
+                    <label htmlFor="email" className="login-label">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Email" className="login-input" onChange={handleChange} value={userData.email} required />
                     {error.email && <p className="error-message">{error.email}</p>}
                 </div>
 
                 <div className="input-control">
-                    <label htmlFor="password" className="register-login">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password" className="register-input" onChange={handleChange} value={userData.password} required />
+                    <label htmlFor="password" className="login-label">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" className="login-input" onChange={handleChange} value={userData.password} required />
                     {error.password && <p className="error-message">{error.password}</p>}
                 </div>
 
                 {error.message && <p className="error-message">{error.message}</p>}
 
-                <button type="submit">{ isLoading ? 'Logging In...' : 'Log In'}</button>
+                <button type="submit" className="login-btn">{ isLoading ? 'Logging In...' : 'Log In'}</button>
             </form>
         </section>
     )
