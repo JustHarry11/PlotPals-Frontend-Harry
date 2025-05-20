@@ -50,7 +50,6 @@
   transform: translateX(-50%);
 }
 
-.error-message,
 .loading {
   position: fixed;
   top: 50%;
