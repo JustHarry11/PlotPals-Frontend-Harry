@@ -93,7 +93,7 @@ export default function MediaShow() {
                             </div>
 
                             <h3>Description:</h3>
-                            <button className="spoiler-toggle" onClick={() => setShowSpoiler(prev => !prev)}>
+                            <button className="button" onClick={() => setShowSpoiler(prev => !prev)}>
                                 {showSpoiler ? 'Hide Spoiler' : 'Show Spoiler'}
                             </button>
                             <p className={`media-description ${showSpoiler ? 'revealed' : 'hidden'}`}>
