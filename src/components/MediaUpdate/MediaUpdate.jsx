@@ -58,7 +58,14 @@ export default function MediaUpdate() {
         async function getMediaData() {
             try {
                 const { data: mediaData } = await singleMedia(mediaId)
-                setFormData({...mediaData, genres: mediaData.genres.map(genre => ({ value: genre._id, label: genre.name }))})
+                setFormData({
+                    ...mediaData, 
+                    genres: mediaData.genres.map(genre => ({ value: genre._id, label: genre.name })),
+                    rating: mediaData.rating ?? '',
+                    length: mediaData.length ?? '',
+                    episodeNum: mediaData.episodeNum ?? '',
+                    status: mediaData.status ?? '',
+                })
                 const { data: genreData } = await genreIndex()
                 setGenres(genreData.map(genre => ({ value: genre._id, label: genre.name })))
             } catch (error) {
@@ -99,6 +106,7 @@ export default function MediaUpdate() {
                         isMulti
                         name='genres'
                         placeholder="Select genres..."
+                        className='input-genre-edit'
                         options={genres}
                         value={formData.genres}
                         onChange={handleGenreChange}
