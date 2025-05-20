@@ -4,6 +4,10 @@
   padding: 2rem;
 }
 
+.login-title {
+  text-align: center;
+}
+
 .form {
   max-width: 400px;
   width: 100%;
@@ -16,13 +20,13 @@
   margin-bottom: 1.5rem;
 }
 
-.input-control .register-login {
+.input-control .login-label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-.input-control .register-input {
+.input-control .login-input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
@@ -46,7 +50,7 @@ small {
   font-size: 0.875rem;
 }
 
-.login-link {
-  margin-left: 0.25rem;
-  text-decoration: underline;
+.login-btn {
+  display: block;
+  margin: 0 auto;
 }

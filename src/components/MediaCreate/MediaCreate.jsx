@@ -4,7 +4,7 @@ import { UserContext } from '../../contexts/UserContext'
 import { createMedia } from '../../services/medias'
 import { genreIndex } from '../../services/genres'
 import { Navigate, useNavigate } from 'react-router'
-import ErrorMessage from '../ErrorMessage'
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
 import Select from 'react-select'
 
 export default function MediaCreate() {

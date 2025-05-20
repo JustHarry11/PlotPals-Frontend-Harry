@@ -39,7 +39,7 @@
 }
 
 @media (max-width: 1760px) {
-  .favourites-list {
+  .media-index-list  {
     grid-template-columns: repeat(5, 1fr);
     padding: 0 1rem;
   }
