@@ -9,7 +9,7 @@ export default function UserLogin() {
     const { user, setUser } = useContext(UserContext)
 
     const [userData, setUserData] = useState({
-        email: '',
+        identity: '',
         password: ''
     })
 
@@ -49,9 +49,9 @@ export default function UserLogin() {
             <form className="form" onSubmit={handleSubmit}>
                 <h1 className="login-title">Log In</h1>
                 <div className="input-control">
-                    <label htmlFor="email" className="login-label">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email" className="login-input" onChange={handleChange} value={userData.email} required />
-                    {error.email && <p className="error-message">{error.email}</p>}
+                    <label htmlFor="identity" className="login-label">Email or Username</label>
+                    <input type="text" name="identity" id="identity" placeholder="Email or Username" className="login-input" onChange={handleChange} value={userData.identity} required />
+                    {error.identity && <p className="error-message">{error.email}</p>}
                 </div>
 
                 <div className="input-control">

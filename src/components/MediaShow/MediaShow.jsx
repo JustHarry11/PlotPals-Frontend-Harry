@@ -2,11 +2,11 @@ import useFetch from '../../hooks/useFetch'
 import './MediaShow.css'
 import { UserContext } from '../../contexts/UserContext'
 import { singleMedia } from '../../services/medias'
-import { Link, useParams } from 'react-router'
+import { Link, useNavigate, useParams } from 'react-router'
 import MediaDelete from '../MediaDelete/MediaDelete'
 import { useContext, useEffect, useState } from 'react'
-import Select from 'react-select/base'
 import { favDelete, favCreate } from '../../services/favourites'
+import { removeToken } from '../../utils/auth'
 
 
 
@@ -23,7 +23,7 @@ export default function MediaShow() {
         mediaId
     )
 
-
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (media && user) {
@@ -39,6 +39,10 @@ export default function MediaShow() {
             const response = await serviceFunction(mediaId)
             setMedia(response.data)
         } catch (error) {
+            if (error.response?.status === 401) {
+                removeToken()
+                navigate('/login')
+            }
             console.error('Error toggling favourite:', error)
         }
     }

@@ -1,16 +1,25 @@
 import { NavLink } from "react-router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { removeToken } from "../../utils/auth";
 import './Navbar.css'
 
 export default function NavBar() {
 
+    const [userSettings, setUserSettings] = useState(false)
     const { user, setUser } = useContext(UserContext)
 
     const handleSignOut = () => {
         removeToken()
         setUser(null)
+    }
+
+    function toggleDropdown() {
+        setUserSettings(drop => !drop)
+    }
+
+    function closeDropdown() {
+        setUserSettings(false)
     }
 
     return (
@@ -32,15 +41,32 @@ export default function NavBar() {
                         {user
                             ? (
                                 <>
-                                    <NavLink to="/medias/new">Add Media</NavLink>
-                                    <NavLink to="/favourites">Your Favourites</NavLink>
-                                    <NavLink onClick={handleSignOut} to="/login">Sign Out</NavLink>
+                                <div className="profile-dropdown">
+                                    <div onClick={toggleDropdown} className="username-toggle">
+                                        { user.username.charAt(0).toUpperCase() + user.username.slice(1) }
+                                    </div>
+                                    {userSettings && (
+                                    <div className="dropdown-content">
+                                        <NavLink to="/medias/new" onClick={closeDropdown}>Add Media</NavLink>
+                                        <NavLink to="/favourites" onClick={closeDropdown}>Your Favourites</NavLink>
+                                        <NavLink onClick={() => {handleSignOut(); closeDropdown();}} to="/login">Sign Out</NavLink>
+                                    </div>
+                                    )}
+
+                                </div>
                                 </>
                             )
                             : (
                                 <>
-                                    <NavLink to="/register">Register User</NavLink>
-                                    <NavLink to="/login">Log In</NavLink>
+                                    <div onClick={toggleDropdown} className="username-toggle">
+                                        Account
+                                    </div>
+                                    {userSettings && (
+                                    <div className="dropdown-content">
+                                        <NavLink to="/register" onClick={closeDropdown}>Register</NavLink>
+                                        <NavLink to="/login" onClick={closeDropdown}>Log In</NavLink>
+                                    </div>
+                                    )}
                                 </>
 
                             )
