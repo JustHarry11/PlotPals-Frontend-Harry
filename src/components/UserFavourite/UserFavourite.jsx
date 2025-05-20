@@ -26,7 +26,7 @@ export default function FavouriteIndex(){
                         ? <p className='loading'>Loading...</p>
                         : favourites.length > 0
                             ? favourites.map(favourite => <MediaCard key={favourite._id} media={favourite}/>)
-                        : <p>No Favourites Found</p>
+                        : <p className='favourites-error'>Nothing here yet! Add some favourites to light up this page ✨</p>
                 }
             </section>
         
