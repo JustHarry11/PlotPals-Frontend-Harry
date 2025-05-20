@@ -15,6 +15,8 @@ export default function MediaShow() {
     const { user } = useContext(UserContext)
     const [isFavourited, setIsFavourited] = useState(false)
 
+    const [showSpoiler, setShowSpoiler] = useState(false)
+
     const { data: media, setData: setMedia, isLoading, error } = useFetch(
         singleMedia,
         {},
@@ -90,10 +92,13 @@ export default function MediaShow() {
                                 </span>
                             </div>
 
-
-
                             <h3>Description:</h3>
-                            <p>{media.description}</p>
+                            <button className="spoiler-toggle" onClick={() => setShowSpoiler(prev => !prev)}>
+                                {showSpoiler ? 'Hide Spoiler' : 'Show Spoiler'}
+                            </button>
+                            <p className={`media-description ${showSpoiler ? 'revealed' : 'hidden'}`}>
+                                {media.description}
+                            </p>
 
                             {user && (
                                 <button
@@ -107,8 +112,8 @@ export default function MediaShow() {
 
                             {user && media.owner && user._id === media.owner &&
                                 <div className="media-controls">
-                                        <span><Link className='button' to={`/medias/${mediaId}/edit`}>Edit</Link></span>
-                                        <span><MediaDelete /></span>
+                                    <span><Link className='button' to={`/medias/${mediaId}/edit`}>Edit</Link></span>
+                                    <span><MediaDelete /></span>
                                 </div>
                             }
                         </div>
