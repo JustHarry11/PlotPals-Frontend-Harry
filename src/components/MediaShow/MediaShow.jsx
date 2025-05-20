@@ -97,7 +97,7 @@ export default function MediaShow() {
 
                             {user && (
                                 <button
-                                    className={`favourite-button ${isFavourited ? 'favourited' : ''}`}
+                                    className={`button favourite-button ${isFavourited ? 'favourited' : ''}`}
                                     onClick={handleToggleFavourite}
                                 >
                                     {isFavourited ? '💔 Remove Favourite' : '❤️ Add to Favourites'}
@@ -107,8 +107,8 @@ export default function MediaShow() {
 
                             {user && media.owner && user._id === media.owner &&
                                 <div className="media-controls">
-                                    <Link className='button' to={`/medias/${mediaId}/edit`}>Edit</Link>
-                                    <MediaDelete />
+                                        <span><Link className='button' to={`/medias/${mediaId}/edit`}>Edit</Link></span>
+                                        <span><MediaDelete /></span>
                                 </div>
                             }
                         </div>

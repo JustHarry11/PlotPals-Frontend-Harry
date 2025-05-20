@@ -17,10 +17,19 @@
   padding: 0.25rem 0.5rem;
 }
 
-.show-top-row, .show-bottom-row {
+.show-top-row, .show-bottom-row  {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
     padding: 10px
 }
+
+.media-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
