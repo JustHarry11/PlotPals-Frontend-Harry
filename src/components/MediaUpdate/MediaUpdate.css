@@ -1,0 +1,43 @@
+.form-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.media-edit-form {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.input-control-edit {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-control-edit label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.input-control-edit input,
+.input-control-edit select,
+.input-control-edit textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.error-message-edit {
+  color: #d33;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
