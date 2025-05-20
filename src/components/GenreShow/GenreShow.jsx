@@ -26,7 +26,7 @@ export default function GenreShow() {
                             : genre.media.length > 0
                                 ? genre.media.map(media => (<MediaCard key={media._id} media={media} />
                                 ))
-                                :<p>There are no movies or shows with that genre. Do you know any?</p>
+                                :<p className="no-genre-message">There are no movies or shows with that genre. Do you know any?</p>
                     }
                 </div>
             </div>
