@@ -21,7 +21,7 @@ export default function FavouriteIndex(){
 
             <section className='favourites-list'>
                 {error
-                    ? <p className='error-message'>{error}</p>
+                    ? <p className='favourites-error'>{error}</p>
                     : isLoading
                         ? <p className='loading'>Loading...</p>
                         : favourites.length > 0

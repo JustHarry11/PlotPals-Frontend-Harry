@@ -110,6 +110,7 @@ export default function MediaCreate() {
                         isMulti
                         name='genres'
                         placeholder="Select genres..."
+                        className='input-genre'
                         options={genres.map(genre => ({ value: genre._id, label: genre.name }))}
                         value={genres
                         .filter(genre => formData.genres.includes(genre._id))
