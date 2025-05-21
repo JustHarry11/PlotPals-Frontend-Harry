@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { loginUser } from "../../services/auth"
-import { Link, useNavigate, Navigate } from "react-router"
+import { useNavigate, Navigate, useLocation } from "react-router"
 import { setToken, getUserFromToken } from "../../utils/auth"
 import { UserContext } from "../../contexts/UserContext"
 import './UserLogin.css'
@@ -17,6 +17,8 @@ export default function UserLogin() {
     const [isLoading, setIsLoading] = useState(false)
 
     const navigate = useNavigate()
+    const location = useLocation()
+    const sessionExpired = location.state?.sessionExpired
 
     async function handleSubmit(evt) {
         evt.preventDefault()
@@ -61,6 +63,7 @@ export default function UserLogin() {
                 </div>
 
                 {error.message && <p className="error-message">{error.message}</p>}
+                {sessionExpired && <p className="error-message">{sessionExpired}</p>}
 
                 <button type="submit" className="login-btn">{ isLoading ? 'Logging In...' : 'Log In'}</button>
             </form>

@@ -12,7 +12,7 @@ import { removeToken } from '../../utils/auth'
 
 export default function MediaShow() {
     const { mediaId } = useParams()
-    const { user } = useContext(UserContext)
+    const { user, setUser } = useContext(UserContext)
     const [isFavourited, setIsFavourited] = useState(false)
 
     const [showSpoiler, setShowSpoiler] = useState(false)
@@ -41,9 +41,11 @@ export default function MediaShow() {
         } catch (error) {
             if (error.response?.status === 401) {
                 removeToken()
-                navigate('/login')
+                setUser(null)
+                await navigate('/login', {
+                    state: { sessionExpired: 'Your session has expirted. Please log in again.'}
+                })         
             }
-            console.error('Error toggling favourite:', error)
         }
     }
 
