@@ -1,6 +1,7 @@
 import './App.css'
 import { Routes, Route, Navigate } from 'react-router'
 import NavBar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
 
 
 import MediaIndex from './components/MediaIndex/MediaIndex'
@@ -20,7 +21,10 @@ function App() {
 
   return (
     <>
+    <div className="app-wrapper">
       <NavBar />
+      
+      <main className='main-content'>
       <Routes>
         <Route path='/' element={<Navigate to='/home' replace/>}/>
         <Route path='/home' element={<FavouriteHome />} />
@@ -38,6 +42,9 @@ function App() {
         <Route path='/register' element={<UserRegister />} />
 
       </Routes>
+      </main>
+      <Footer />
+      </div>
     </>
   )
 }
