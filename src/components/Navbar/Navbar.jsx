@@ -27,13 +27,13 @@ export default function NavBar() {
             <div className="top-navigation">
                 <div className="nav-left">
                     <div className="brand-logo">
-                        <NavLink to="/home">🎥</NavLink>
+                        <NavLink to="/home" onClick={closeDropdown}>🎥</NavLink>
                     </div>
-                    <NavLink to="/medias">Media</NavLink>
-                    <NavLink to="/genres">Genre</NavLink>
+                    <NavLink to="/medias" onClick={closeDropdown}>Media</NavLink>
+                    <NavLink to="/genres" onClick={closeDropdown}>Genre</NavLink>
                 </div>
                 <div className="nav-middle">
-                    <NavLink to="/home">
+                    <NavLink to="/home" onClick={closeDropdown}>
                     <h1>PlotPals</h1>
                     </NavLink>
                 </div>
@@ -41,12 +41,12 @@ export default function NavBar() {
                         {user
                             ? (
                                 <>
-                                <div className="profile-dropdown">
-                                    <div onClick={toggleDropdown} className="username-toggle">
+                                <div  className="profile-dropdown">
+                                    <div onMouseEnter={toggleDropdown} className="username-toggle">
                                         { user.username.charAt(0).toUpperCase() + user.username.slice(1) }
                                     </div>
                                     {userSettings && (
-                                    <div className="dropdown-content">
+                                    <div onMouseLeave={toggleDropdown} className="dropdown-content">
                                         <NavLink to="/medias/new" onClick={closeDropdown}>Add Media</NavLink>
                                         <NavLink to="/favourites" onClick={closeDropdown}>Your Favourites</NavLink>
                                         <NavLink onClick={() => {handleSignOut(); closeDropdown();}} to="/login">Sign Out</NavLink>
@@ -58,11 +58,11 @@ export default function NavBar() {
                             )
                             : (
                                 <>
-                                    <div onClick={toggleDropdown} className="username-toggle">
+                                    <div onMouseEnter={toggleDropdown}  className="username-toggle">
                                         Account
                                     </div>
                                     {userSettings && (
-                                    <div className="dropdown-content">
+                                    <div onMouseLeave={closeDropdown} className="dropdown-content">
                                         <NavLink to="/register" onClick={closeDropdown}>Register</NavLink>
                                         <NavLink to="/login" onClick={closeDropdown}>Log In</NavLink>
                                     </div>
