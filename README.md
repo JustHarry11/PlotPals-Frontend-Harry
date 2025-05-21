@@ -97,7 +97,7 @@ Profile
 
 Google Doc
 
-![Details of a to do list](https://docs.google.com/document/d/1qf9pjkaJSSwG_spn_gEUxpAEJRhszXy2qO2qqkmLnf4/edit?usp=sharing)
+[Details of a to do list](https://docs.google.com/document/d/1qf9pjkaJSSwG_spn_gEUxpAEJRhszXy2qO2qqkmLnf4/edit?usp=sharing)
 
 ERD
 
