@@ -52,7 +52,7 @@ export default function UserRegister() {
 
                 <div className="input-control">
                     <label htmlFor="email" className="register-label">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email" className="register-input" onChange={handleChange} value={userData.email} required />
+                    <input type="email" name="email" id="email" placeholder="Email" className="register-input" onChange={handleChange} value={userData.email} required />
                     {error.email && <p className="error-message">{error.email}</p>}
                 </div>
 
