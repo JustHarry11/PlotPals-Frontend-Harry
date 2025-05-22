@@ -17,7 +17,10 @@ export default function GenreIndex() {
                         : isLoading
                             ? <p className='loading'>Loading...</p>
                             : genres.length > 0
-                                ? genres.map(genre => (
+                                ? genres
+                                    .slice()
+                                    .sort((a, b) => a.name.localeCompare(b.name))
+                                    .map(genre => (
                                     <Link key={genre._id} to={`/genres/${genre._id}`}>
                                         <div className='genre'>
                                             <h2>{genre.name}</h2>
