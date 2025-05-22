@@ -12,6 +12,12 @@
   background-color: none;
 }
 
+.single-media-image {
+  width: 250px;
+  height: 375px;
+  object-fit: cover;
+}
+
 .genre-tag-show {
   border-radius: 8px;
   padding: 0.25rem 0.5rem;
