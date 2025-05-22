@@ -58,7 +58,7 @@ export default function MediaShow() {
                     : (
                         <div className="single-media">
                             <h1>{media.title}</h1>
-                            <img src={media.imageUrl} alt={media.title} width="250px" />
+                            <img src={media.imageUrl} alt={media.title} className='single-media-image' />
 
                             <div>
                                 {media.type === 'movie' ? (
