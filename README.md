@@ -1,77 +1,69 @@
 <h1 align="center">PlotPals</h1>
 
-## Description
+### Description
 
-This project is a media management application built to render movies and tv-shows. It will allow users to create and manage media entries such as movies and TV shows. It features a dynamic form built with React where users can input details like title, description, pick genres, release date, and other media-specific fields such as rating/length for movies, episode numbers/status for TV shows. Validation is handled server-side using Mongoose schema validations, this is to ensure robust error handling and data integrity. The UI uses React-Select for multi-select genre inputs and includes conditional rendering based on the selected genre type.
-
-User authentication is integrated to restrict access from unauthorized users, such as, unable to edit/delete media that you personally do not own. Overall, the project demonstrates the creation of a responsive, user-friendly CRUD interface with complex form handling.
-
-This was created with React, JavaScript, CSS, Mongoose / MongoDB, React-Select, React Router, Axios, and Node.js/Express
-
-Front-end: https://github.com/Ryziou/PlotPals-Frontend  
-Back-end: https://github.com/Ryziou/PlotPals-Backend
+This is the penultimate project of the bootcamp where we have to build a full stack project. We will build a API using Express and Node and secured with JWT and interact with that API using MongoDB to be able to have full CRUD on the app
 
 
-## Deployment link
+### Deployment link
 
-[Click here to try out the PlotPals website!](https://plotpals.netlify.app/home)
-
-## Getting Started/Code Installation
-
-1. Clone this repository to your local machine. 
-2. Open VSC with the folder as a main in terminal and input "npm run dev" into it.
-    - Add a .env file and add this key "VITE_API_BASE_URL=https://plotpalsapi.netlify.app/api" OR, you can clone the back-end as well and then rename the URL to your localhost URL. 
-3. Open up your web browser and go to http://localhost:5173/ to start trying it out.
+myplotpals.netlify.app
 
 
-## Timeframe & Working Team (Solo/Pair/Group)
+### Getting Started/Code Installation
 
-This project started on 13/05/2025 and I was in a duo team with [Harry Lippa](https://github.com/JustHarry11) on this. It was completed on 21/05/2025.<date>
-
-
-## Technologies Used
-
-### Front End
-    - React
-    - React Router
-    - React-Select
-    - CSS
-    - JavaScript
-
-### Back End / Development Tools
-    - Dependencies (bcryptjs, cloudinary, cors, dotenv, express, jsonwebtoken, mongoose, morgan, multer, multer-storage-cloudinary, serverless-http)
-    - Javascript
-    - MongoDB / Mongoose
-    - Express
-    - Visual Studio Code
-    - Git & GitHub
-    - Windows Subsystem for Linux (WSL) with Ubuntu
-    - Zsh (Z Shell) + Oh My Zsh
-    - Node.js & npm
-
-### External websites used for researching or use
-
-#### Researching & Images
-
-[Google](https://www.google.com/)  
-[MDN Web Docs](https://developer.mozilla.org/en-US/)  
-[Cloudinary for Image Hosting](https://cloudinary.com/)  
-[Mongoose Docs](https://mongoosejs.com/docs/guide.html)  
-[Express Node.js](https://expressjs.com/en/5x/api.html)  
-[Code Academy](https://www.codecademy.com/)  
-[React](https://react.dev/reference/react)  
-[React Router](https://reactrouter.com/home)  
-[React Select](https://react-select.com/)  
-
-#### Others
-[MongoDB for Database Hosting](https://www.mongodb.com/)  
-[ChatGPT for Seed DB](https://chatgpt.com/)  
-[Netlify for Serverless Hosting](https://www.netlify.com/)
+1. Download PlotPals-Frontend-Harry from Github
+2. In the terminal Run NPM I to install all the dependencies
+3. Create a .env file and inside add VITE_API_BASE_URL=https://myplotpalsapi.netlify.app/api
+4. In the terminal Run npm run dev
+5. Follow the link to the Page
 
 
-## Brief
+### Timeframe & Working Team (Solo/Pair/Group)
 
-### MVP (Minimum Viable Product)
+Callum and I worked on this project in a pair, we got put into our team on Tuesday 13th May and the deadline for the project is Thursday 22nd May. Callums GitHub repo is https://github.com/Ryziou
+
+
+### Technologies Used
+
+
+Back End:
+    JavaScript
+    Netlify
+    Bcryptjs
+    Cors
+    Dotenv
+    Express
+    JsonWebToken
+    Mongoose
+    Morgan
+    Multer
+    Multer-storage-cloudinary
+    Serverless-http
+
+Front End:
+    React
+    React-Dom
+    React-Router
+    Reach-Select
+    Axios
+
+Development Tools:
+    Visual Studios
+    Zoom
+    Postman
+    Slack
+    Termial
+    Cloudinary
+    MongoDB
+    Trello
+
+
+
+
+### Brief
+
+
 - The back-end application is built with Express and Node.
 - The front-end application is built with React.
 - MongoDB is used as the database management system.
@@ -83,400 +75,335 @@ This project started on 13/05/2025 and I was in a duo team with [Harry Lippa](ht
 - The project is deployed online so that the rest of the world can use it.
 
 
+### Planning
 
-## Planning
-<details>
-    <summary>Wireframes</summary>
-Main
 
-![Media Whole Wireframe](https://res.cloudinary.com/dit5y4gaj/image/upload/v1747827437/db68fa31-894b-4600-a4f5-bb6b6e91d781.png)
+![wireframe](image.png)
+This is our initial wireframe of how we wanted the site to look. The top row is what you can see and access if you have signed in and the bottom is if you havnt registered or signed in yet. We were thinking we could create a card for the media which will allow use to keep the theme throughout and display the media neatly. Our aim was to make the website neat and clean and easy to navigate which I believe we achived.
 
-Profile
+![showpage](image-1.png)
+We also created a version of how we wanted to have the show page to look which keeps the theme of the media card but also added all of the details from the individual media.
 
-![Show Page](https://res.cloudinary.com/dit5y4gaj/image/upload/v1747827643/fae37881-c769-4035-9a07-09c6663079c7.png)
+![ERD](image-2.png)
+He is our entity relationship diagram which allowed us to understand how each of the components of the app would work together and where each of the individual files would be placed.
 
-Google Doc
-
-[Details of a to do list](https://docs.google.com/document/d/1qf9pjkaJSSwG_spn_gEUxpAEJRhszXy2qO2qqkmLnf4/edit?usp=sharing)
-
-ERD
-
-![Models/Schemas ERD](https://res.cloudinary.com/dit5y4gaj/image/upload/v1747827727/f42a4830-82ff-4f76-9082-d85c625c6360.png)
-
-Pair Project
-
-This project was collaboratively planned with [Harry Lippa](https://github.com/JustHarry11). Together, we worked on the initial wireframes in excalidraw which was to outline the structure and user flow of the application. While building out the wireframe, I worked on the Entity Relationship Diagram (ERD) to map out our data models. I recreated the wireframe for the Media Show page as I wanted to be more precise on what goes into it. We then outlined our to-do list etc into a google doc above to simplify our trello cards and easier to delegate tasks out to both of us.
+In Trello we set out what need to be done for this project, we then assigned them so we knew what we needed to do. From there we move and Item which we were working on into our tab so we knew which part the other was working on. Once completed and checked they were moved to the completed tab.
 
 ## Backend
 
-Callum:
+### Callum:
 
-    - Created backend and frontend GitHub repositories.
+Created backend and frontend GitHub repositories.
+Set up the initial Express server structure and added all required dependencies.
+Connected the application to MongoDB Atlas.
+Defined the Media model and created the seed database.
+Created authentication middleware to protect routes.
+Defined the Genre model with virtual fields.
+Created both Media and Genre controllers.
+Applied and tested authentication middleware on appropriate routes.
+Updated the Media model with validation rules.
+Extended login functionality to accept either username or email.
 
-    - Set up the initial Express server structure and added all required dependencies.
+### Harry:
 
-    - Connected the application to MongoDB Atlas.
-
-    - Defined the Media model and created the seed database.
-
-    - Created authentication middleware to protect routes.
-
-    - Defined the Genre model with virtual fields.
-
-    - Created both Media and Genre controllers.
-
-    - Applied and tested authentication middleware on appropriate routes.
-
-    - Updated the Media model with validation rules.
-
-    - Extended login functionality to accept either username or email.
-
-Harry:
-
-    - Defined the User model.
-
-    - Created User controller with login/register functionality.
-
-    - Implemented the global errorHandler middleware and error.js utilities.
-
-    - Created the Favourites controller to manage user favourite media.
-
+Defined the User model.
+Created User controller with login/register functionality.
+Implemented the global errorHandler middleware and error.js utilities.
+Created the Favourites controller to manage user favourite media.
+    
 ## Frontend
 
-Callum:
+### Callum:
 
-    - Set up base file structure for the initial commit to ensure project consistency.
+Set up base file structure for the initial commit to ensure project consistency.
+Created and configured Axios services for Media, Favourites, and Genres.
+Built full CRUD components for Media (Index, Show, Create, Delete, Update).
+Developed the reusable MediaCard component used across multiple pages (Home, Index, Genre).
+Styled Media components such as (Home, Index, Create, Update, MediaCard)and the User Favourites component using CSS.
+Created footer to display credentials
 
-    - Created and configured Axios services for Media, Favourites, and Genres.
+### Harry:
 
-    - Built full CRUD components for Media (Index, Show, Create, Delete, Update).
+Created and implemented Login/Register forms and authentication services.
+Developed and styled the Navigation Bar.
+Set up JWT token handling with localStorage for authentication.
+Created the reusable useFetch custom hook for data fetching.
+Built Favourite components for the home page and the user's favourites section.
+Built Genre components (Index and Show) to display media by genre.
+Created the reusable ErrorMessage component for form and API error handling.
+Implemented functionality to favourite/unfavourite a media item.
+Styled the MediaShow component.
 
-    - Developed the reusable MediaCard component used across multiple pages (Home, Index, Genre).
-
-    - Styled Media components such as (Home page, Index, Create, Update, MediaCard)and the User Favourites component using CSS.
-    
-    - Created the footer component to display the credentials of team members.
-
-Harry:
-
-    - Created and implemented Login/Register forms and authentication services.
-
-    - Developed and styled the Navigation Bar.
-
-    - Set up JWT token handling with localStorage for authentication.
-
-    - Created the reusable useFetch custom hook for data fetching.
-
-    - Built Favourite components for the home page and the user's favourites section.
-
-    - Built Genre components (Index and Show) to display media by genre.
-
-    - Created the reusable ErrorMessage component for form and API error handling.
-
-    - Implemented functionality to favourite/unfavourite a media item.
-
-    - Styled the MediaShow component.
-
-</details>
 
 ## Build/Code Process
 
-### Advanced Mongoose Schema with Conditional Validation
-One of the core foundations of this project was creating a robust data model that could handle both movies and TV shows while enforcing different validation rules based on the media type. I realised near the end of the 1 week project that the user is able to skip certain parts when creating/editing and they would run into issues due to this. So I pretty much wanted to solidify the requirements for each field and it became like this:
 
-```jsx
-import mongoose, { Schema } from 'mongoose'
+### Adding/Removing favourites using the Back-End
 
-const mediaSchema = new mongoose.Schema({
-    title: {type: String, required: [true, 'Please provide the title'], unique: true},
-    description: {type: String, required: [true, 'Please provide the description']},
-    imageUrl: {type: String, required: [true, 'Please provide an image']},
-    genres: {
-        type: [{ type: Schema.Types.ObjectId, ref: 'Genre'}],
-        validate: {
-            validator: value => value.length >= 1,
-            message: 'Please select at least one genre'
+When I began adding the function which allowed the user to favourite a media object I initially thought of adding it to the front end , using a button which would toggle if the content was liked or not. I couldn't figure out how to get it to work and I soon realised that I needed to add a controller in the backend. SO I added a Post and Delete to the bottom of the media controller as you will only be able to favourite and unfavourite when you are on the specific media page.
+
+```js
+// * Add Favourite
+router.post('/medias/:mediaId/fav', isSignedIn, async ( req, res ) => {
+    try {
+        const { mediaId } = req.params
+        const media = await Media.findById(mediaId)
+        const favourited = media.favourites.find(userId => userId.equals(req.user._id))
+
+        if (!favourited) {
+            media.favourites.push(req.user._id)
         }
-    },
-    type: {type: String, required: [true, 'Please provide the type of media'], enum: ['movie', 'tvshow']},
-    rating: {
-        type: Number,
-        min: [0, 'Rating must be at least 0'],
-        max: [10, 'Rating must be at most 10'],
-        required: [function() {
-            return this.type === 'movie'
-        }, 'Please provide a rating for the movie']
-    },
-    length: {
-        type: Number,
-        required: [function() {
-            return this.type === 'movie'
-        }, 'Please provide the length of the movie in minutes'],
-        validate: {
-            validator: function(value) {
-                if (this.type !== 'movie') return true
-                return value > 0
-            },
-            message: 'Movie length must be greater than 0'
-        }
-    },
-    episodeNum: {
-        type: Number,
-        required: [function() {
-            return this.type === 'tvshow'
-        }, 'Please provide the amount of episode numbers for the TV show'],
-        validate: {
-            validator: function(value) {
-                if (this.type !== 'tvshow') return true
-                return value > 0
-            },
-            message: 'Episode number must be greater than 0'
-        }
-    },
-    status: {
-        type: String,
-        required: [function() {
-            return this.type === 'tvshow'
-        }, 'Status must be on-going, completed, or cancelled'],
-        enum: {
-            values: ['on-going', 'completed', 'cancelled'],
-            message: 'Status must be on-going, completed, or cancelled'
-        }
-    },
-    releaseDate: {type: Number, required: [true, 'Please provide the release date']},
-    favourites: [{type: Schema.Types.ObjectId, ref: 'User'}],
-    owner: {type: Schema.Types.ObjectId, ref: 'User', required: true}
-}, {
-    timestamps: true
+
+        await media.save()
+
+        const updatedMedia = await Media.findById(mediaId).populate('genres')
+
+        return res.json(updatedMedia)
+    } catch (error) {
+        errorHandler(error, res)
+    }
 })
-const Media = mongoose.model('Media', mediaSchema)
-export default Media
+
+// * Remove Favourite
+router.delete('/medias/:mediaId/fav', isSignedIn, async ( req, res ) => {
+    try {
+        const { mediaId } = req.params
+        const media = await Media.findById(mediaId)
+        const favourited = media.favourites.find(userId => userId.equals(req.user._id))
+
+        if (favourited) {
+            media.favourites.pull(req.user._id)
+        }
+
+        await media.save()
+
+        const updatedMedia = await Media.findById(mediaId).populate('genres')
+
+        return res.json(updatedMedia)
+
+    } catch (error) {
+        errorHandler(error, res)
+    }
+})
 ```
-I'm very proud of the conditional validation logic implemented in this schema. Rather than attempting to create very complicated front-end logic, I designed a unified schema that adapts its validation rules based on the type field. This approach offers several advantages:
 
-1. Conditional Required Fields: I used function expressions in the required property to make certain fields mandatory only for specific media types. For example, rating and length are required only for movies, while episodeNum and status are required only for TV shows.
-2. Custom Validators: For fields like length and episodeNum, I implemented custom validation functions that not only check if the value is greater than zero but also intelligently skip validation when the field isn't relevant to the media type.
-3. Detailed Error Messages: Each validation rule includes a specific error message that clearly communicates what went wrong, making the API much more user-friendly for front-end developers working with the data.
-4. Relationships: The schema incorporates relationships with other collections through references (ref), establishing connections between media items, genres, and users who created or favorited the content.
+Even though it is a simple way of dealing with the problem, I believe that it made the process of finding the top favourites and how many favourites each media item had. I believe that this is the cause because using the user schema you had the id of the media item saved which allowed it to easily display the favourites of the user.
 
-The conditional validation approach ensures data integrity without requiring duplicate code or separate models for different content types.
+### Filter for the Favourites
 
-
-### Reusable Media Card Component
-One of the key components I developed for this project was a versatile MediaCard component that could dynamically display different types of media content (movies or TV shows) through multiple pages of the application:
+I started off making the home page by displaying all the media which had been favourited, this was quite a simple process and it allowed me to get all the favourited media in one place. Using that each Favourite item had a type I created a const for the favourite shows and favourite movies and filtered them by type, As we wanted it to go from most favourited to least I had to sort those filtered shows and movies. I then used slice so it would only show the top 5 favourited shows and movies. This was later changed to top 6 as we thought it looked neater displaying 
 
 ```jsx
-import { Link } from 'react-router'
+import useFetch from '../../hooks/useFetch'
+import { favHome } from '../../services/favourites'
+import './HomeFavourite.css'
+import MediaCard from '../MediaCard/MediaCard'
 
-export default function MediaCard({ media }) {
-    
+export default function FavouriteHome() {
+
+    const { data: favourites, isLoading, error } = useFetch(favHome, [])
+
+    const favouriteMovies = [...favourites]
+        .filter(favourite => favourite.type === 'movie')
+        .sort((a, b) => b.favourites.length - a.favourites.length)
+        .slice(0, 6)
+
+    const favouriteTVShows = [...favourites]
+        .filter(favourite => favourite.type === 'tvshow')
+        .sort((a, b) => b.favourites.length - a.favourites.length)
+        .slice(0, 6)
+
     return (
-        <div className="media-card">
-        <Link to={`/medias/${media._id}`}>
-            <img src={media.imageUrl} alt={media.title} className='media-image'/>
-        </Link>
-            <div className="media-content">
-            <Link to={`/medias/${media._id}`}>
-                <h2 className="media-title">{media.title}</h2>
-            </Link>
-                <div className="media-details">
-                    {media.type === 'movie' ? (
-                        <>
-                            <div className="media-top-row">
-                                <span>⭐{media.rating}</span>
-                                <span>❤️{media.favourites.length}</span>
-                            </div>
-                            <div className="media-bottom-row">
-                                <span>🎞️{media.length} mins</span>
-                                <span>{media.releaseDate}</span>
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div className="media-top-row">
-                                <span>📺{media.episodeNum} Ep</span>
-                                <span>❤️{media.favourites.length}</span>
-                            </div>
-                            <div className="media-bottom-row">
-                                <span>{media.status.charAt(0).toUpperCase() + media.status.slice(1)}</span>
-                                <span>{media.releaseDate}</span>
-                            </div>
-                        </>
-                    )}
-                </div>
 
-                <div className="media-genres">
-                    {media.genres.map(genre => (
-                        <Link key={genre._id} to={`/genres/${genre._id}`}>
-                        <span  className='genre-tag'>{genre.name}</span>
-                        </Link>
-                    ))}
-                </div>
-            </div>
+        <div className="home-container">
+            {error
+                ? <p className='error-message'>{error}</p>
+                : isLoading
+                    ? <p className='loading'>Loading...</p>
+                    : <>
+                        <div className="media-section">
+                            <h1 className='home-title'>Favourite Movies</h1>
+                            <div className="media-grid">
+                                {favouriteMovies.map(media => <MediaCard key={media._id} media={media} />)}
+                            </div>
+                        </div>
+
+                        <div className="media-section">
+                            <h1 className='home-title'>Favourite TV Shows</h1>
+                            <div className="media-grid">
+                                {favouriteTVShows.map(media => <MediaCard key={media._id} media={media} />)
+                                }
+                            </div>
+                        </div>
+                    </>
+            }
         </div>
     )
 }
 ```
-This component highlights my approach to creating reusable UI elements that adapt based on the data they receive. I'm particularly proud of how I implemented conditional rendering based on the media type, allowing the same card to display different information for movies versus TV shows.
+This part was quite satisfying because I was using features which I learnt in the first couple weeks of the course so it was nice to reuse it and incorperate it correctly which my current project.
 
-For movies, the card displays ratings and runtime, while for TV shows it shows episode count and status. I used the ternary operator (media.type === 'movie' ? ... : ...) to elegantly handle this conditional rendering without duplicating the entire card structure.
+### Drop down menu
 
-Another feature I implemented was making the genres clickable, which allows users to navigate to genre-specific pages. By wrapping each genre tag in a React Router Link component, I enhanced the navigation flow throughout the application while maintaining a clean and intuitive UI. This approach significantly improved the user experience by creating natural pathways for content discovery.
-
-### Dynamic Multi-Select for Genres
-One of the more challenging aspects of the project was implementing a multi-select dropdown for genre selection in the media creation form. I used the React-Select library to create an intuitive interface for users to select multiple genres for their media entries:
-
+Callum was working on adding a drop down menu as it was something we thought about add if we had time at the end of our project, we did and he came across an issue which was that either the dropdown would stay even if your mouse left the menu or the menu would disapear as soon as you left the button. Testing out multiple different solutions and researching how to fix it I came across two solutions, one was to do it all in the css, as this was a good solution I wanted to figure out a way to do it in jsx.
 
 ```jsx
-const [genres, setGenres] = useState([])
+import { NavLink } from "react-router";
+import { useContext, useState, useRef } from "react";
+import { UserContext } from "../../contexts/UserContext";
+import { removeToken } from "../../utils/auth";
+import './Navbar.css'
 
-function handleGenreChange(selectedOptions) {
-    const selectedIds = selectedOptions.map(genreChange => genreChange.value)
-    setFormData({ ...formData, genres: selectedIds})
-}
+export default function NavBar() {
 
-useEffect(() => {
-async function getGenres() {
-    try {
-    const { data } = await genreIndex()
-    setGenres(data)
-    } catch (error) {
-    setError({ ...error, preload: 'Failed to load genres' })
+    const [userSettings, setUserSettings] = useState(false)
+    const { user, setUser } = useContext(UserContext)
+
+    const hoverProfile = useRef(false)
+    const hoverContent = useRef(false)
+
+    const openDropdown = () => setUserSettings(true)
+
+    const handleMouseLeave = () => {
+        setTimeout(() => {
+            if (!hoverProfile.current && !hoverContent.current) {
+                setUserSettings(false)
+            }
+        }, 100)
     }
+
+    const handleSignOut = () => {
+        removeToken()
+        setUser(null)
+    }
+
+
+    return (
+        <header>
+            <div className="top-navigation">
+                <div className="nav-left">
+                    <div className="brand-logo">
+                        <NavLink to="/home">🎥</NavLink>
+                    </div>
+                    <NavLink to="/medias">Media</NavLink>
+                    <NavLink to="/genres">Genre</NavLink>
+                </div>
+                <div className="nav-middle">
+                    <NavLink to="/home">
+                        <h1>PlotPals</h1>
+                    </NavLink>
+                </div>
+                <nav className="nav-right">
+                    {user
+                        ? (
+                            <>
+                                <div className="profile-dropdown">
+                                    <div className="username-toggle" 
+                                        onMouseEnter={() => {hoverProfile.current = true; openDropdown()}}
+                                        onMouseLeave={() => {hoverProfile.current = false; handleMouseLeave()}}>
+                                        {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
+                                    </div>
+                                    {userSettings && (
+                                        <div className="dropdown-content"
+                                            onMouseEnter={() => (hoverContent.current = true)}
+                                            onMouseLeave={() => { hoverContent.current = false; handleMouseLeave()}}>
+                                            <NavLink to="/medias/new" >Add Media</NavLink>
+                                            <NavLink to="/favourites" >Your Favourites</NavLink>
+                                            <NavLink onClick={() => { handleSignOut() }} to="/login">Sign Out</NavLink>
+                                        </div>
+                                    )}
+                                </div>
+                            </>
+                        )
+                        : (
+                            <>
+                                <div className="profile-dropdown">
+                                    <div className="username-toggle"
+                                        onMouseEnter={() => { hoverProfile.current = true; openDropdown(); }}
+                                        onMouseLeave={() => { hoverProfile.current = false; handleMouseLeave() }}>
+                                        Account
+                                    </div>
+                                    {userSettings && (
+                                        <div className="dropdown-content"
+                                            onMouseEnter={() => (hoverContent.current = true)}
+                                            onMouseLeave={() => { hoverContent.current = false; handleMouseLeave() }}>
+                                            <NavLink to="/register">Register</NavLink>
+                                            <NavLink to="/login">Log In</NavLink>
+                                        </div>
+                                    )}
+                                </div>
+                            </>
+
+                        )
+                    }
+                </nav>
+            </div>
+        </header>
+    )
 }
-getGenres()
-}, [])
-
-<div className="input-control-create">
-    <label htmlFor="genres">Genres</label>
-    <Select
-        isMulti
-        name='genres'
-        placeholder="Select genres..."
-        className='input-genre'
-        options={genres.map(genre => ({ value: genre._id, label: genre.name }))}
-        value={genres
-        .filter(genre => formData.genres.includes(genre._id))
-        .map(genre => ({ value: genre._id, label: genre.name }))
-        }
-        onChange={handleGenreChange}
-    />
-    {error.genres && <p className='error-message-create'>{error.genres}</p>}
-</div>
 ```
-This implementation showcases my ability to work with form state management in React. The complexity came from needing to:
-
-1. Fetch available genres from the backend when the component mounts (using the useEffect hook)
-2. Transform the raw genre data into the format expected by React-Select (mapping to {value, label} objects)
-3. Track selected genres in the form state
-4. Handle changes when users select or deselect genres
-
-I'm particularly proud of how I solved the two-way binding between the form state and the Select component. The value prop uses a combination of filtering and mapping to display the currently selected genres, while the handleGenreChange function updates the form state with just the IDs of selected genres.
-
-This approach ensures that the data structure remains clean when sending to the backend (just an array of IDs), while still providing a rich, user-friendly interface. It also includes error handling both for the initial data fetch and validation feedback for the user if they don't select required genres.
+By using hoverProfile and hoverContent it allowed me to only make the drop down dissapear when the mouse is no longer on both the profile and content. I thought this was a interesting way to deal with the issue but also a very simple way. 
 
 
 ## Challenges
 
-### Media Schema Nightmare: Adding Requirements in a Different Method
-This part took me a good portion of my time. It honestly nearly broke my brain 😅. Creating a single schema that could handle both movies and TV shows was the easiest part, but having them need different requirements felt like solving a Rubik's cube blindfolded.
+Instructions
 
-Movies needed ratings and length while TV shows needed episode numbers and a status - and I kept running into walls trying to make this work with the validate method.
+Challenges are great for showing your learning journey and problem solving, and this is a section that many engineers will check out. Every day of your engineering career you’ll encounter challenges, this is part of your growth and development. It’s the challenges you encounter that helps you become a stronger and more competent engineer. 
 
-After hours of Googling, reading through Mongoose docs, and talking to my instructor, I discovered you could use functions like the 'validate' and 'enum' fields while also utilising functions in 'required' fields:
+Here you will detail any particular challenges you encountered as you were coding the project. 
 
-```js
-type: {type: String, required: [true, 'Please provide the type of media'], enum: ['movie', 'tvshow']},
+Questions to answer here:
 
-required: [function() {
-    return this.type === 'movie'
-}, 'Please provide a rating for the movie']
+What technical challenges did you come across? 
+Why were these challenges? 
+What problem solving did you do to rectify them?
+Team dynamics/ Project management
+Tools/Tech you used
 
-```
-This code snippet allows the type to be a conditional requirement that the ```type``` must be considered a ```movie``` or ```tvshow```. I did have to add square brackets ```[]``` to this function so that I could add a custom message to the user, otherwise it would only give back "Path 'rating' is requred." messages.
+Insert your Challenges here:
 
-The next part of the Schema Nightmare is doing the validate fields:
 
-```jsx
-validate: {
-    validator: function(value) {
-        if (this.type !== 'movie') return true
-        return value > 0
-    },
-    message: 'Movie length must be greater than 0'
-}
-```
 
-Funny enough, this one is the easiest. You simply define the function and then do a simple ```if``` statement. You ask if the ```type``` is NOT equal to ```movie``` then we skip validation by returning ```true```. If it is a ```movie``` then we require that field to be greater than 0. We then return a message if it falls under ```false```.
-
-The hardest one for my brain was this one:
-
-```jsx
-status: {
-    type: String, 
-    required: [function() {
-        return this.type === 'tvshow'
-    }, 'Status must be on-going, completed, or cancelled'],
-    enum: {
-        values: ['on-going', 'completed', 'cancelled'],
-        message: 'Status must be on-going, completed, or cancelled'
-    }
-},
-```
-I did add validate fields previously but I ran into multiple issues like, if the user picked ```movie``` then this would always get called for some reason due to the enum part. After messing around with it for a good amount of time, I had figured I needed to either
-1. Empty these fields
-2. Delete these fields
-
-Emptying is kinda pointless as the default useState considers each field as empty already, so in the end I went with #2 and added this part in the creation page
-```jsx
-const newFormData = {...formData}
-
-if (newFormData.type === 'movie') {
-    delete newFormData.episodeNum
-    delete newFormData.status
-}
-
-if (newFormData.type === 'tvshow') {
-    delete newFormData.rating
-    delete newFormData.length
-}
-```
-Thankfully this skipped validation errors by creating a copy of the ```formData``` object, It then checks the ```type``` field. If it's ```movie``` then delete the ```tvshow``` fields, if it's ```tvshow``` then delete the ```movie``` fields. This cleans up data before sending the object to the backend.
 
 ## Wins
 
-### Dream Team: Working with my Duo Partner
-Working with my duo partner proved to be one of the best wins of this project; [Harry](https://github.com/JustHarry11). Our collaboration was characterised by:
-1. Strong communication that made problem-solving more efficient
-2. Similar coding mistakes that allowed us to identify common mistakes
-3. A supportive environment where we could troubleshoot these issues together with
 
-### Server-side validation
-It's already part of the build process and challenges but it's still one of my wins that I implemented server-side validation with Mongoose and connected it to avoid client-side error rendering in React.
+### My Plot Pal
 
-### React-Select
-Another win would be the usage of ```react-select```. I got informed about this by my instructor and went to go research more about it, I ended up creating a dynamic multi-select genre field which greatly improved the user experience when selecting genres for their media.
+The highlight of this project was working with [Callum](https://github.com/Ryziou). This is because we:
+
+1. Similar errors when we are coding which made it easy to spot any little errors as the other had had something similar
+2. Open communication where we could ask each other question and give eachother idea of how to fix problems
+3. Had a similar idea of how we wented the projec to look
+
+### Full Stack
+
+I enjoyed the satisfaction I got from being able to complete both sides of a app and basically build something out of nothing.
+
+### UI
+
+I am proud of how our project looked, I believe it looks very similar to our wireframe and it is a project which I am proud of based on that and how easy it is to navigate.
+
 
 ## Key Learnings/Takeaways
 
 
-- I now feel more confident when using React hooks like useState, useEffect, and useContext to manage data and app flow.
+- I feel like I have a better understanding about building a API and the process of testing out all of the parts.
+- With this I also feel like I understand the importance of PostMan and how easy it is to read
+- Working in with GitHub as a group and know to collaberate on a project using branches.
+- I feel a lot more confident in dealing with Token and understand how they work.
 
-- I learnt how to structure form validation on both the front-end and now the back-end due to the usage of the ```validate``` and ```enum``` fields.
-
-- I have improved and got more comfortable with working with Mongoose schemas, especially setting up nested and referenced data like genres and users.
-
-- Practicing Git collaboration, regular commits, and managing my tasks via Trello for simple project management
 
 ## Bugs
 
-- Image uploads are currently handled as file inputs but the server expects a URL. This can definitely cause some confusion or unexpected behaviour on the back-end and front-end.
+
+- The server thinks the files uploaded are URL which are actually images, this coause some trouble in the back-end and front-end
 
 ## Future Improvements
 
-- Add user authentication UI feedback (like redirecting to a welcome page after logging in, or a profile page)
-- Add a nice little gif for loading states so it's not just generic text saying "Loading..."
-- Comment and review system to let users be able to leave comments or reviews on each media item
-- Add a robust search function that would allow users to find media by, not just genres but the title, or release date.
-- Add a light mode for users who dislike dark mode
-- Optimize the media cards for smaller screens
+
+- When you register a user it takes you straight to the home page instead of asking you to sign in.
+- Increase the number of filters on the media page.
+- Combine the media a genre page by creating a filter at the top of the page so you can see if your looking for media or genres.
+- Display the main actors and show the films and that they were also in.
